@@ -1,0 +1,17 @@
+# 占位符测试
+
+from langchain_core.prompts import ChatPromptTemplate,MessagesPlaceholder
+from langchain_core.messages import HumanMessage
+
+prompt_template = ChatPromptTemplate(
+    [
+        ("system","你是一个厉害的人工智能助手"),
+        MessagesPlaceholder("msgs")
+
+    ]
+)
+
+result = prompt_template.invoke({"msgs":[HumanMessage(content="hi:")]})
+print(result)
+
+# messages=[SystemMessage(content='你是一个厉害的人工智能助手', additional_kwargs={}, response_metadata=(}),HumanMessage(content='hi!', additional_kwargs={}, response_metadata={H)]
